@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Egészség kalkulátor</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            width: 100%;
+            max-width: 420px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 18px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            background: #222;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>⚖️ Egészség kalkulátor</h1>
+
+        <form method="POST" action="/">
+
+            <label>Név:</label>
+            <input type="text" name="nev" required>
+
+            <label>Életkor:</label>
+            <input type="number" name="kor" min="1" max="120" required>
+
+            <label>Nem:</label>
+            <select name="nem" required>
+                <option value="">Válassz...</option>
+                <option value="ferfi">Férfi</option>
+                <option value="no">Nő</option>
+            </select>
+
+            <label>Magasság (cm):</label>
+            <input type="number" name="magassag" min="100" max="250" required>
+
+            <label>Súly (kg):</label>
+            <input type="number" name="suly" min="20" max="300" step="0.1" required>
+
+            <label>Aktivitási szint:</label>
+            <select name="aktivitas" required>
+                <option value="">Válassz...</option>
+                <option value="1.2">Kevés mozgás</option>
+                <option value="1.375">Könnyű mozgás</option>
+                <option value="1.55">Közepes mozgás</option>
+                <option value="1.725">Sok mozgás</option>
+                <option value="1.9">Nagyon sok mozgás</option>
+            </select>
+
+            <button type="submit">Számítás 🚀</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
